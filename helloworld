@@ -1,0 +1,25 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('Build') {
+            steps {
+                // Run any build commands necessary to create the "Hello, World!" application
+            }
+        }
+
+        stage('Test') {
+            steps {
+                // Run any tests to verify the application is functioning correctly
+            }
+        }
+
+        stage('Deploy') {
+            steps {
+                // Use any deployment tools necessary to deploy the application
+                // For example, you could use the "kubectl" command to deploy a Kubernetes deployment
+                sh "kubectl apply -f helloworld.yaml"
+            }
+        }
+    }
+}
